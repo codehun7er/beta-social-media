@@ -1,0 +1,1 @@
+export { SecuritySettingsLink } from './SecuritySettingsLink';

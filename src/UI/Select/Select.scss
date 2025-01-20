@@ -1,0 +1,116 @@
+@import '../../scss/variables';
+
+.selectBox {
+	user-select: none;
+	position: relative;
+
+	&__value {
+		cursor: pointer;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+		margin-bottom: 8px;
+		padding: 10px;
+
+		font-size: 1em;
+		color: $white-text;
+
+		background-color: transparent;
+		border: 1px solid $light-blue;
+		border-radius: 5px;
+	}
+
+	&__label {
+		pointer-events: none;
+
+		position: absolute;
+		top: 0;
+		transform: translateY(-50%) scale(0.8);
+
+		display: flex;
+		gap: 5px;
+		align-items: center;
+
+		padding: 0 10px;
+
+		font-size: 1em;
+		color: $light-blue;
+		text-transform: uppercase;
+
+		background-color: $primary-color;
+
+		&.gender {
+			left: 3px;
+		}
+	}
+
+	&__icon {
+		width: 16px;
+		height: 16px;
+		transition: 0.1s ease all;
+
+		&.active {
+			transform: rotate(-180deg);
+		}
+
+		path {
+			fill: $light-blue;
+		}
+	}
+}
+
+.select {
+	position: relative;
+	margin-bottom: 20px;
+
+	&__dropdown {
+		position: absolute;
+		z-index: 10;
+		width: 100%;
+		background-color: $secondary-color;
+	}
+
+	&__item {
+		cursor: pointer;
+		padding: 7px 0 7px 10px;
+		border: 1px solid rgb(255 255 255 / 25%);
+		color: $white-text;
+
+		&:first-child {
+			border-radius: 5px 5px 0 0;
+		}
+
+		&:last-child {
+			border-radius: 0 0 5px 5px;
+		}
+
+		&:not(:last-child) {
+			border-bottom: 1px solid rgb(255 255 255 / 25%);
+		}
+
+		&:hover {
+			color: $white-text;
+			background-color: $light-blue;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.selectBox {
+		&__value {
+			font-size: 14px;
+		}
+
+		&__label {
+			font-size: 14px;
+		}
+
+		&__icon {
+			width: 12px;
+			height: 12px;
+		}
+	}
+}

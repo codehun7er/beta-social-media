@@ -1,0 +1,14 @@
+@import '../../scss/variables.scss';
+
+.report {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(33, 33, 33);
+	border-radius: 5px;
+	color: $white-text;
+	padding: 10px;
+	user-select: none;
+	font-size: 20px;
+}

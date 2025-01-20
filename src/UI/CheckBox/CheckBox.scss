@@ -1,0 +1,103 @@
+@import '../../scss/variables';
+
+.checkbox {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+	padding: 10px 0;
+
+	font-size: 22px;
+
+	&-svg {
+		pointer-events: none;
+		user-select: none;
+
+		position: absolute;
+
+		width: 0;
+		height: 0;
+	}
+
+	&-input {
+		position: absolute;
+		visibility: hidden;
+	}
+
+	&-input-label {
+		cursor: pointer;
+
+		overflow: hidden;
+		display: flex;
+		gap: 10px;
+		align-items: center;
+
+		width: 100%;
+		padding: 12px 8px;
+
+		border-radius: 8px;
+
+		transition: all 0.2s ease;
+
+		& span {
+			transform: translate3d(0, 0, 0);
+			float: left;
+			vertical-align: middle;
+
+			&:first-child {
+				position: relative;
+				transform: scale(1);
+
+				width: 20px;
+				height: 20px;
+
+				border: 1px solid #cccfdb;
+				border-radius: 4px;
+
+				transition: all 0.2s ease;
+
+				& svg {
+					position: absolute;
+					top: 4px;
+					left: 2px;
+
+					width: 13px;
+					height: 11px;
+
+					fill: none;
+					stroke: $white-text;
+					stroke-dasharray: 16px;
+					stroke-dashoffset: 16px;
+					stroke-linecap: round;
+					stroke-linejoin: round;
+					stroke-width: 2;
+				}
+			}
+
+			&:last-child {
+				line-height: 18px;
+			}
+		}
+
+		&:hover span:first-child {
+			border-color: $light-blue;
+		}
+
+		&:not(:last-child) {
+			margin-right: 6px;
+		}
+
+		&:hover {
+			background: rgb(51 179 253 / 15.8%);
+		}
+	}
+
+	&-input:checked + &-input-label span:first-child {
+		background: $light-blue;
+		border-color: $light-blue;
+
+		& svg {
+			stroke-dashoffset: 0;
+		}
+	}
+}

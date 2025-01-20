@@ -1,0 +1,19 @@
+@import '../../scss/variables';
+
+.logged-in-layout {
+	display: flex;
+	max-width: 100vw;
+	min-height: 100vh;
+
+	&__main {
+		display: flex;
+		flex-grow: 1;
+		background-color: $primary-color;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.logged-in-layout {
+		flex-direction: column-reverse;
+	}
+}

@@ -1,0 +1,332 @@
+@import '../../scss/variables';
+
+.post-wrapper {
+	position: relative;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	width: 100%;
+
+	padding: 10px 20px;
+
+	color: $white-text;
+
+	background-color: $secondary-color;
+	border-radius: 10px;
+
+	&__header {
+		user-select: none;
+
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		justify-content: space-between;
+
+		&-info {
+			display: flex;
+			gap: 10px;
+			transition: 0.3s ease all;
+		}
+
+		&-more {
+			cursor: pointer;
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			transition: 0.2s ease all;
+
+			&:hover {
+				background-color: #2a2b2e;
+			}
+
+			path {
+				fill: #959799;
+			}
+		}
+	}
+
+	&__avatar {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+	}
+
+	&__username {
+		font-size: 22px;
+		font-weight: 500;
+		color: $white-text;
+		text-decoration: none;
+		transition: 0.3s ease all;
+	}
+
+	&__time {
+		color: #959799;
+		font-size: 15px;
+	}
+
+	&__text {
+		font-size: 20px;
+		color: $white-text;
+		word-break: break-word;
+
+		ul,
+		ol {
+			padding-left: 22px;
+		}
+	}
+
+	&__context {
+		user-select: none;
+
+		position: absolute;
+		z-index: 2;
+		top: 15px;
+		right: 60px;
+
+		display: flex;
+		flex-direction: column;
+
+		min-width: 180px;
+		padding: 3px;
+
+		list-style: none;
+
+		background-color: rgb(33 33 33);
+		border-radius: 7px;
+		box-shadow: 1px 1px 12px rgb(14 14 14);
+
+		&-item {
+			cursor: pointer;
+
+			display: flex;
+			gap: 15px;
+			align-items: center;
+
+			width: 100%;
+			padding: 6px 5px 6px 10px;
+
+			font-size: 16px;
+			font-weight: 500;
+			color: $white-text;
+			text-decoration: none;
+
+			background-color: transparent;
+			border: none;
+			border-radius: 7px;
+
+			transition: 0.2s ease all;
+
+			&-icon {
+				width: 20px;
+				height: 20px;
+				fill: $white-text;
+
+				path {
+					stroke: $white-text;
+				}
+			}
+
+			&:hover {
+				background-color: rgb(172 172 172 / 8.9%);
+			}
+
+			&.delete {
+				color: $error;
+
+				&:hover {
+					background-color: #ff59592a;
+				}
+			}
+
+			&.delete &-icon {
+				fill: $error;
+
+				path {
+					stroke: $error;
+				}
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		&-button {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			padding: 6px 10px;
+			background-color: transparent;
+			border-radius: 10px;
+			border: none;
+			cursor: pointer;
+			text-decoration: none;
+			transition: 0.3s ease all;
+
+			&:hover {
+				background-color: #2a2b2e;
+			}
+		}
+
+		&-icon {
+			width: 20px;
+			height: 20px;
+			transition: 0.3s ease all;
+		}
+
+		&-button.active &-icon.like {
+			animation: likeAnimation 0.3s ease 0s 1 alternate;
+		}
+
+		&-button.active &-icon.like path {
+			fill: $error;
+		}
+
+		@keyframes likeAnimation {
+			50% {
+				transform: scale(1.2);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		&-button.active &-likes {
+			color: $error;
+		}
+
+		&-likes,
+		&-comments {
+			font-size: 16px;
+			color: #959799;
+		}
+	}
+
+	&__editing {
+		&-input {
+			background-color: $primary-color;
+			border-radius: 5px;
+			margin-bottom: 15px;
+			transition: 0.3s ease all;
+			font-size: 12px !important;
+
+			.ql-editor {
+				font-size: 20px;
+			}
+		}
+
+		&-buttons {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 5px;
+		}
+
+		&-button {
+			background-color: transparent;
+			cursor: pointer;
+			border: none;
+			background-color: #212224;
+			color: white;
+			font-size: 18px;
+			padding: 5px 15px;
+			border-radius: 5px;
+			font-weight: 500;
+			transition: 0.3s ease all;
+
+			&:hover {
+				background-color: $light-blue;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.post {
+		&__avatar {
+			width: 40px;
+			height: 40px;
+		}
+
+		&__username {
+			font-size: 20px;
+		}
+
+		&__time {
+			font-size: 13px;
+		}
+
+		&__text {
+			font-size: 18px;
+		}
+
+		&__footer {
+			&-button {
+				padding: 4px 8px;
+			}
+
+			&-icon {
+				width: 18px;
+				height: 18px;
+			}
+
+			&-likes,
+			&-comments {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.post {
+		&__text {
+			font-size: 16px;
+		}
+
+		&__context {
+			min-width: 125px;
+
+			&-item {
+				font-size: 14px;
+				gap: 10px;
+				padding: 4px 6px 4px 8px;
+
+				&-icon {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.post {
+		padding: 10px;
+
+		&__context {
+			right: 50px;
+		}
+
+		&__avatar {
+			width: 32px;
+			height: 32px;
+		}
+
+		&__username {
+			font-size: 17px;
+		}
+
+		&__time {
+			font-size: 11px;
+		}
+	}
+}
