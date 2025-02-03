@@ -75,7 +75,7 @@ yarn build
 
 ## English
 
-### 🚀 IT Developer Platform
+### 🚀 Platform for IT developers
 
 A modern web application for IT developers featuring a messenger, user profiles, posts, and an explorer for search. Built with React, STOMP.js for WebSockets, Framer Motion for animations, SCSS for styling, Axios for API fetching, and Redux Toolkit for state management.
 
