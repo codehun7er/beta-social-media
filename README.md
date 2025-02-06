@@ -38,7 +38,7 @@
 1. Клонируйте репозиторий:
 
 ```bash
-git clone [repository-url]
+git clone https://github.com/codehun7er/beta-social-media.git
 ```
 
 2. Установите зависимости:
@@ -98,7 +98,7 @@ A modern web application for IT developers featuring a messenger, user profiles,
 1. Clone the repository:
 
 ```bash
-git clone [repository-url]
+git clone https://github.com/codehun7er/beta-social-media.git
 ```
 
 2. Install dependencies:
