@@ -15,6 +15,8 @@
 
 ## Русский
 
+https://beta-social-media.vercel.app - ссылка на сайт
+
 ### 🚀 Платформа для IT-разработчиков
 
 Современное веб-приложение, предназначенное для IT-разработчиков, с функциями мессенджера, профилей, постов и поиска. Использует React, STOMP.js для WebSockets, Framer Motion для анимаций, SCSS для стилей, Axios для работы с API и Redux Toolkit для управления состоянием.
@@ -75,6 +77,8 @@ yarn build
 
 ## English
 
+https://beta-social-media.vercel.app - website link
+
 ### 🚀 Platform for IT developers
 
 A modern web application for IT developers featuring a messenger, user profiles, posts, and an explorer for search. Built with React, STOMP.js for WebSockets, Framer Motion for animations, SCSS for styling, Axios for API fetching, and Redux Toolkit for state management.
@@ -129,3 +133,4 @@ http://localhost:5173
 npm run build
 # or
 yarn build
+```
