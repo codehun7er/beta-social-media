@@ -114,7 +114,8 @@ const logout = async () => {
 };
 
 const getNewTokens = async () => {
-	await api({ url: `${API_URL}/auth/refresh-token`, type: 'POST' });
+	const response = await api({ url: `${API_URL}/auth/refresh-token`, type: 'POST' });
+	return response.data;
 };
 
 const deleteAccount = async () => {
